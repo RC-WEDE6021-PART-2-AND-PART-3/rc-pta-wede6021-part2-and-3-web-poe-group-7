@@ -1,0 +1,6 @@
+email,password_hash,first_name,last_name,role,verification_status
+john@email.com,PASTE_HASH_FOR_Password123_HERE,John,Doe,customer,pending
+jane@email.com,PASTE_HASH_FOR_Password123_HERE,Jane,Smith,customer,pending
+admin@pastimes.co.za,PASTE_HASH_FOR_Password123_HERE,Admin,User,admin,active
+bob@email.com,PASTE_HASH_FOR_Password123_HERE,Bob,Marley,customer,pending
+lebo@email.com,PASTE_HASH_FOR_Password123_HERE,Lebo,Khumalo,customer,active

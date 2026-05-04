@@ -1,0 +1,566 @@
+/* =========================
+   PASTIMES UI SYSTEM
+========================= */
+
+:root {
+    --primary-navy: #1a1a2e;
+    --accent-blue: #4361ee;
+    --accent-hover: #3a56d4;
+
+    --bg-gray: #f0f2f5;
+    --white: #ffffff;
+    --border-color: #e2e8f0;
+
+    --error-red: #e53e3e;
+    --success-green: #38a169;
+
+    --text-dark: #2d3748;
+    --text-light: #718096;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+}
+
+/* =========================
+   CENTER WRAPPER
+========================= */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* =========================
+   LOGIN / REGISTER CARD
+========================= */
+.login-container {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   ADMIN EXPANSION MODE
+========================= */
+.admin-mode .login-container {
+    max-width: 1100px;
+    width: 95%;
+}
+
+/* =========================
+   HEADER SECTION
+========================= */
+.login-left {
+    background-color: var(--primary-navy);
+    color: var(--white);
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.login-left h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.login-left p {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* =========================
+   FORM
+========================= */
+form {
+    padding: 35px;
+}
+
+.admin-section form {
+    padding: 20px 0;
+}
+
+/* =========================
+   LABELS
+========================= */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-danger {
+    background-color: var(--error-red);
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c53030;
+}
+
+/* =========================
+   FOOTER LINKS
+========================= */
+.form-footer {
+    text-align: center;
+    padding: 10px 35px 30px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   ALERTS
+========================= */
+.alert-error {
+    background-color: #fff5f5;
+    color: var(--error-red);
+    padding: 10px;
+    margin: 15px 35px 0;
+    border-left: 5px solid var(--error-red);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background-color: #f0fff4;
+    color: var(--success-green);
+    padding: 10px;
+    margin: 15px 35px 0;
+    border-left: 5px solid var(--success-green);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* =========================
+   NAVBAR (PRODUCTS / CART)
+========================= */
+.header-container {
+    background: var(--white);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.header-container h1 {
+    color: var(--primary-navy);
+}
+
+
+
+/* =========================
+   PRODUCTS PAGE (STABLE 2-COLUMN GRID)
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 20px 0;
+    color: var(--primary-navy);
+}
+
+/* REMOVE TABLE BEHAVIOUR COMPLETELY */
+.table-container {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* IMPORTANT FIX: FORCE TABLE TO ACT LIKE GRID CONTAINER */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* GRID WRAPPER */
+tbody {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* PRODUCT CARD */
+tr {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    transition: 0.2s ease;
+}
+
+tr:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE */
+.product-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+/* REMOVE TABLE LOOK COMPLETELY */
+th {
+    display: none;
+}
+
+td {
+    border: none;
+    padding: 10px 14px;
+}
+
+/* REMOVE FIRST CELL GAP */
+td:nth-child(1) {
+    padding: 0;
+}
+
+/* BRAND */
+td:nth-child(2) {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary-navy);
+}
+
+/* INFO TEXT */
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* PRICE */
+td:nth-child(6) {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--primary-navy);
+}
+
+/* BUTTON */
+.btn-cart {
+    background: var(--accent-blue);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+    tbody {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+}
+
+/* =========================
+   CART PAGE FIX (STABLE LAYOUT)
+========================= */
+
+.cart-page {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* MAIN CART LAYOUT */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* =========================
+   LEFT SIDE (ITEMS)
+========================= */
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* CART CARD */
+.cart-card {
+    display: flex;
+    gap: 15px;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    align-items: flex-start;
+}
+
+/* =========================
+   RIGHT SIDE (SUMMARY FIXED)
+========================= */
+
+.cart-summary {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* SUMMARY ROWS */
+.summary-line,
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* TOTAL SECTION */
+.cart-total {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 2px solid var(--border-color);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary-navy);
+}
+
+/* =========================
+   BUTTON FIX (MAIN ISSUE)
+========================= */
+
+.cart-summary .btn-primary,
+.cart-summary .btn-danger {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+/* spacing between buttons */
+.cart-summary .btn-primary {
+    margin-top: 10px;
+}
+
+.cart-summary .btn-danger {
+    margin-top: 10px;
+}
+
+/* =========================
+   CART ACTIONS (LEFT SIDE)
+========================= */
+
+.cart-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* prevent inline overlap */
+.cart-actions a {
+    display: block;
+}
+
+/* =========================
+   EMPTY CART
+========================= */
+
+.empty-cart {
+    background: var(--white);
+    padding: 60px;
+    text-align: center;
+    border-radius: 16px;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width: 768px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-card {
+        flex-direction: column;
+    }
+
+    .cart-summary {
+        margin-top: 20px;
+    }
+}
+/* =========================
+   CHECKOUT SAFETY FIX
+========================= */
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* STOP OVERLAP */
+.checkout-summary {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 20px;
+}
+
+/* FORCE TOTAL TO STAY BELOW CONTENT */
+.summary-total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid var(--border-color);
+    font-size: 22px;
+    font-weight: 800;
+    clear: both;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-summary {
+        position: relative;
+        top: auto;
+    }
+}
+/* =========================
+   ADMIN TABLE
+========================= */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th {
+    background: var(--primary-navy);
+    color: white;
+    padding: 12px;
+}
+
+.admin-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .cart-layout,
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        min-width: 100%;
+    }
+}
